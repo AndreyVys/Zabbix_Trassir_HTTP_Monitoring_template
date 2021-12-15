@@ -2,4 +2,4 @@
 Zabbix template for monitoring Trassir server parameters.
 
 
-Add password to trassir server (Server Properties - > Web Server -> SDK Password) and Zabbix (template -> Macroses -> {$PASSWORD}) 
+Add password to trassir server (Server Properties - > Web Server -> SDK Password) and Zabbix (template -> Macros -> {$PASSWORD}) 
