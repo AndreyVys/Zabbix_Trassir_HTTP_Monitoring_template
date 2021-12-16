@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.4</version>
-    <date>2021-12-15T13:26:41Z</date>
+    <date>2021-12-16T05:15:14Z</date>
     <groups>
         <group>
             <uuid>fee27259157b47648bdfc176c661f51a</uuid>
@@ -362,6 +362,7 @@
                             <expression>last(/Trassir_HTTP/success,#1)=0</expression>
                             <name>Trassir: Cannot read data</name>
                             <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
                         </trigger>
                     </triggers>
                 </item>
