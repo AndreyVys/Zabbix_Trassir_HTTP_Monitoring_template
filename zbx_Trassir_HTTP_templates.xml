@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.4</version>
-    <date>2021-12-16T05:15:14Z</date>
+    <date>2022-01-28T15:21:54Z</date>
     <groups>
         <group>
             <uuid>fee27259157b47648bdfc176c661f51a</uuid>
@@ -39,7 +39,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -67,7 +67,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -95,7 +95,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -124,7 +124,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -135,7 +135,7 @@
                         <trigger>
                             <uuid>626a89de45164e299b0f547f38a4ea83</uuid>
                             <expression>min(/Trassir_HTTP/cpu_load,5m)&gt;{$CPU.UTIL.CRIT}</expression>
-                            <name>Trassir: High CPU utilization (over {$CPU.UTIL.CRIT}% for 5m)</name>
+                            <name>{HOST.NAME}: High CPU utilization (over {$CPU.UTIL.CRIT}% for 5m)</name>
                             <opdata>Current utilization: {ITEM.LASTVALUE1}</opdata>
                             <priority>WARNING</priority>
                             <description>CPU utilization is too high. The system might be slow to respond.</description>
@@ -162,7 +162,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -173,7 +173,7 @@
                         <trigger>
                             <uuid>4dc1c7c0af8c4276ae770a85207d36d9</uuid>
                             <expression>last(/Trassir_HTTP/database,#1)&lt;&gt;1</expression>
-                            <name>Trassir: Database is not OK</name>
+                            <name>{HOST.NAME}: Database is not OK</name>
                             <priority>HIGH</priority>
                         </trigger>
                     </triggers>
@@ -198,7 +198,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -209,7 +209,7 @@
                         <trigger>
                             <uuid>de156cf49a384496a461f26521b2adc8</uuid>
                             <expression>last(/Trassir_HTTP/disks,#1)&lt;&gt;1</expression>
-                            <name>Trassir: Disks is not OK</name>
+                            <name>{HOST.NAME}: Disks is not OK</name>
                             <priority>HIGH</priority>
                         </trigger>
                     </triggers>
@@ -235,7 +235,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -264,7 +264,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -293,7 +293,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -321,7 +321,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -349,7 +349,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -360,7 +360,7 @@
                         <trigger>
                             <uuid>faa6495457664639aa3d983cebedaae8</uuid>
                             <expression>last(/Trassir_HTTP/success,#1)=0</expression>
-                            <name>Trassir: Cannot read data</name>
+                            <name>{HOST.NAME}: Cannot read data</name>
                             <priority>HIGH</priority>
                             <manual_close>YES</manual_close>
                         </trigger>
@@ -386,7 +386,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
-                    <url>https://{HOST.CONN}:8080/health</url>
+                    <url>https://{HOST.CONN}:{$PORT}/health</url>
                     <query_fields>
                         <query_field>
                             <name>password</name>
@@ -397,7 +397,7 @@
                         <trigger>
                             <uuid>7df00e981aa44dbdaa363e6330cfeebd</uuid>
                             <expression>last(/Trassir_HTTP/uptime,#1)&lt;600</expression>
-                            <name>Trassir server uptime &lt; 10m</name>
+                            <name>Trassir server {HOST.NAME} uptime &lt; 10m</name>
                             <opdata>Server uptime: {ITEM.LASTVALUE1}</opdata>
                             <priority>WARNING</priority>
                         </trigger>
@@ -422,24 +422,24 @@
                     <value>100</value>
                 </macro>
                 <macro>
-                    <macro>{$PASSWORD}</macro>
-                    <value></value>
+                    <macro>{$PORT}</macro>
+                    <value>8080</value>
                 </macro>
             </macros>
         </template>
     </templates>
     <triggers>
         <trigger>
-            <uuid>19b3521784e745f1ad533d32ce524d69</uuid>
-            <expression>last(/Trassir_HTTP/channels_online,#1)&lt;&gt;last(/Trassir_HTTP/channels_total,#1)</expression>
-            <name>Trassir: Cameras or channels is not OK (active: {ITEM.LASTVALUE1} /  total: {ITEM.LASTVALUE2} )</name>
-            <opdata>online: {ITEM.LASTVALUE1} / total: {ITEM.LASTVALUE2}</opdata>
+            <uuid>bea13f15ebe5456a89b554f0563aa607</uuid>
+            <expression>last(/Trassir_HTTP/web.test.fail[Trassir Availability],#1)&lt;&gt;0</expression>
+            <name>Trassir server {HOST.NAME} unavailable</name>
             <priority>HIGH</priority>
         </trigger>
         <trigger>
-            <uuid>bea13f15ebe5456a89b554f0563aa607</uuid>
-            <expression>last(/Trassir_HTTP/web.test.fail[Trassir Availability],#1)&lt;&gt;0</expression>
-            <name>Trassir server unavailable</name>
+            <uuid>19b3521784e745f1ad533d32ce524d69</uuid>
+            <expression>last(/Trassir_HTTP/channels_online,#1)&lt;&gt;last(/Trassir_HTTP/channels_total,#1)</expression>
+            <name>{HOST.NAME}: Cameras or channels is not OK (active: {ITEM.LASTVALUE1} /  total: {ITEM.LASTVALUE2} )</name>
+            <opdata>online: {ITEM.LASTVALUE1} / total: {ITEM.LASTVALUE2}</opdata>
             <priority>HIGH</priority>
         </trigger>
     </triggers>
