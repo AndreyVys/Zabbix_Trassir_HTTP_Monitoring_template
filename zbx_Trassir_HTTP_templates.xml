@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.4</version>
-    <date>2022-01-28T15:21:54Z</date>
+    <date>2022-01-28T15:28:04Z</date>
     <groups>
         <group>
             <uuid>fee27259157b47648bdfc176c661f51a</uuid>
@@ -420,10 +420,6 @@
                 <macro>
                     <macro>{$CPU.UTIL.CRIT}</macro>
                     <value>100</value>
-                </macro>
-                <macro>
-                    <macro>{$PORT}</macro>
-                    <value>8080</value>
                 </macro>
             </macros>
         </template>
